@@ -11,7 +11,7 @@ $sql = "SELECT * FROM admin_table WHERE admin_username = '$username' AND admin_p
 $result = berkhoca_query_parser($sql);
 // echo "<pre>"; print_r($result); die();
 
-if(!empty($result) && count($result) > 0) {
+if(!empty($result) && count($result) > 0 && ($result[0]["admin_status"] == 1) ) {
     
     // Load sessions
     $_SESSION['admin_id']           = $result[0]['admin_id'];

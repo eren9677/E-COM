@@ -40,7 +40,7 @@ include("config.php");
 
     <div id="login">
 
-        <h3>Berk Hoca Default Admin</h3>
+        <h3>Default Admin</h3>
 
         <h5>Please log in to get access</h5>
 
