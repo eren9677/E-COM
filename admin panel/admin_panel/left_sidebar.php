@@ -91,7 +91,25 @@
                         </li>
                     </ul>                       
                     
-                </li>   
+                </li>
+                
+                <li class="dropdown">
+                    <a href="javascript:;">
+                        <i class="fa fa-angle-double-right"></i>
+                        ORDER MANAGEMENT
+                        <span class="caret"></span>
+                    </a>                
+                    
+                    <ul class="sub-nav">
+                        <li>
+                            <a href="product_list.php">
+                                <i class="fa fa-angle-double-right"></i> 
+                                ORDER LIST
+                            </a>
+                        </li>
+                    </ul>                       
+                    
+                </li>
 
             </ul>
                     

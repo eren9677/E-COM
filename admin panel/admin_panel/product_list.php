@@ -95,7 +95,7 @@ if(isset($_GET["delete"]) &&  !empty($_GET["delete"])){
 				          <tr>
 				            <td><?php echo $v['id'] ?></td>
 				            <td><?php echo $v['title'] ?></td>
-							<th> <img src="../../<?php echo $v['img'] ?>" alt="Category image" height="100" width="150"></th>
+							<th> <img src="../../<?php echo $v['img'] ?>" alt="Product image" height="100" width="150"></th>
 							<td><?php echo $v['description'] ?></td>
                             <td><?php echo $v['price'] ?></td>
                             <td><?php echo $v['quantity'] ?></td>
