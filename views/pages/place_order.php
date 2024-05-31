@@ -102,7 +102,7 @@
                           <div class="md:col-span-2">
                             <label for="phone">Phone Number</label>
                             <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
-                              <input name="phone" id="phone" placeholder="Phone Number" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
+                              <input name="phone" id="phone" placeholder="(xxx)-xxx-xx-xx" class="px-4 appearance-none outline-none text-gray-800 w-full bg-transparent" value="" />
                             </div>
                           </div>
         
