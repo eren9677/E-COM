@@ -93,6 +93,7 @@ if(isset($_GET["delete"]) &&  !empty($_GET["delete"])){
 						<?php
 
 						foreach($orders as $k => $v):
+									
 						
 						?>
 
@@ -105,16 +106,58 @@ if(isset($_GET["delete"]) &&  !empty($_GET["delete"])){
 				            <td><?php echo $v['country'] ?></td>
                             <td><?php echo $v['city'] ?></td>
 				            <td><?php echo $v['email'] ?></td>
-                            <td><?php echo $v['products'] ?></td>
+
+
+                            <td> 
+
+								<?php 
+									$prods = json_decode($v["products"],true);
+									//echo "<pre>"; print_r($prods); 
+									$product_ids = array_keys($prods);
+
+									//echo "<pre>"; print_r($product_ids); 
+
+									$q = "SELECT * FROM products WHERE id IN (";
+									foreach ($product_ids as $id) {
+										$q .= $id . ",";
+									}
+									// Remove the trailing comma
+									$q = rtrim($q, ",");
+									$q .= ")";
+									
+									$products = berkhoca_query_parser($q);
+									foreach($products as $product):
+								
+								
+								?>
+								
+							
+							
+							
+							
+								<img src="../../<?php echo $product["img"] ?>" alt="prods" height="50" width="25">
+								X <?php echo $prods[$product["id"]]?>
+						
+						
+							<?php endforeach;?>
+						
+							</td>
+
+
+
+
 				            <td><?php echo $v['order_date'] ?></td>
                             <td><?php echo $v['phone_num'] ?></td>
-				            <td><?php echo $v['total'] ?></td>
+				            <td>₺<?php echo number_format($v["total"],2,".",",") ?></td>
                             <td>
 				            	<a href="order_list.php?delete=<?php echo $v["order_id"]?>"><span class="label label-primary">Delete</span></a>
 				            </td>
 				          </tr>
 
-						  <?php endforeach;?>
+						  <?php 
+						  	endforeach;
+						  
+						  ?>
 				        </tbody>
 				      </table>
 							
