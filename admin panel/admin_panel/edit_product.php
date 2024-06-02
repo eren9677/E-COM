@@ -38,8 +38,25 @@ if(isset($_POST["edit_product"]) && !empty($_POST["title"]) && !empty($_POST["de
    $product_description = $_POST["description"];
    $image = $_FILES["img"]["name"];
 
-   $folder = "../../images/categories/".$image;
-   $use = "/images/categories/".$image; 
+   $folder = "../../images/products/".$image;
+   $use = "/images/products/".$image; 
+
+
+   if($_FILES["img"]["tmp_name"] ==  ""){
+    $use = $product[0]["img"];
+   } // this block of code ensures that no change occurs without uploading the image first!
+   else{
+    $image = $_FILES["img"]["name"];
+    $folder = "../../images/products/".$image; //dosyanın kaydedileceği konum
+    $use = "/images/products/".$image;
+   }
+
+
+
+
+
+
+
 
    $price = $_POST["price"];
    $quantity = $_POST["quantity"];

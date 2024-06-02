@@ -18,7 +18,7 @@ if(isset($_GET["edit"]) && !empty($_GET["edit"])){
 
 
 
-if(isset($_POST["finish_edit"]) && !empty($_POST["category_name"]) && !empty($_FILES["category_image"]) ){
+if(isset($_POST["finish_edit"]) && !empty($_POST["category_name"]) ){
 
    //echo "<pre>"; print_r($_POST); die(); //okayy our data collected is right.
 
@@ -27,6 +27,16 @@ if(isset($_POST["finish_edit"]) && !empty($_POST["category_name"]) && !empty($_F
    $image = $_FILES["category_image"]["name"];
    $folder = "../../images/categories/".$image; //dosyanın kaydedileceği konum
    $use = "/images/categories/".$image; //dosyanın referans olarak gösterilip database'e iletileceği konum
+
+   if($_FILES["category_image"]["tmp_name"] ==  ""){
+    $use = $category[0]["category_img"];
+   } // this block of code ensures that no change occurs without uploading the image first!
+   else{
+    $image = $_FILES["category_image"]["name"];
+    $folder = "../../images/categories/".$image; //dosyanın kaydedileceği konum
+    $use = "/images/categories/".$image;
+   }
+
 
    $category_name = $_POST["category_name"];
    $category_description = $_POST["category_description"];
@@ -143,7 +153,7 @@ if(isset($_POST["finish_edit"]) && !empty($_POST["category_name"]) && !empty($_F
                                             </div>
                                         <div class="form-group">
                                                 <label >CATEGORY IMAGE</label>
-                                                <input  name = "category_image"  type="file" class="form-control" value ="<?php echo $category[0]["category_img"]?>">
+                                                <input  name = "category_image"  type="file" class="form-control">
                                             </div>
                                         <div  class="form-group">
                                                 <label for="text-input">CATEGORY DESCRIPTION</label>

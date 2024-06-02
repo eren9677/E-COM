@@ -50,7 +50,7 @@
                   <a href="category_detail.php?id=<?php echo $v["category_id"]?>">
                     <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                       <div class="rounded-lg h-64 overflow-hidden">
-                        <img alt="content" class="object-cover object-center h-full w-full" src=<?php echo $v["category_img"] ?>>
+                        <img alt="content" class="object-cover object-center h-full w-full" src= "<?php echo $v["category_img"] ?>">
                       </div>
                       <h2 class="text-xl font-medium title-font text-gray-900 mt-5"><?php echo $v["category_name"]?></h2>
                       <p class="text-base leading-relaxed mt-2"><?php echo $v["category_description"]?></p>

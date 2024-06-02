@@ -31,7 +31,7 @@
   <form action="cart.php" method="post"> 
       <div class="container px-5 py-24 mx-auto">
         <div class="lg:w-4/5 mx-auto flex flex-wrap">
-              <img alt="ecommerce" class=" object-contain object-center rounded  p-6 h-96 w-96" src=<?php echo $results[0]["img"]?>>
+              <img alt="ecommerce" class=" object-contain object-center rounded  p-6 h-96 w-96" src= "<?php echo $results[0]["img"]?>">
       
               <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
       

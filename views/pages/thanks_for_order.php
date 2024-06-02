@@ -169,7 +169,7 @@
                   <div class="flex w-2/5"> <!-- product pic and texts -->
     
                     <div class="w-20">
-                      <img class="h-24 w-24 object-contain object-center rounded" src=<?=$product['img']?> >
+                      <img class="h-24 w-24 object-contain object-center rounded" src = "<?php echo $product['img']?> ">
                     </div>
     
                     <div class="flex flex-col justify-between ml-4 flex-grow ">
